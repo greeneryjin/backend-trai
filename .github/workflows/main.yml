@@ -1,0 +1,26 @@
+#서버 이름
+name: trail-server
+
+on: 
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: |
+            cd trail 
+            git pull
+            chmod +x gradlew
+            ./gradlew clean bootjar
+            cd ~/trail-server-db
+            docker-compose up --build -d
