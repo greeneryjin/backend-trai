@@ -28,7 +28,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-devtools'
 
 	implementation group: 'com.auth0', name: 'java-jwt', version: '3.10.3'
-
+	runtimeOnly 'com.h2database:h2'
 
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'mysql:mysql-connector-java'
