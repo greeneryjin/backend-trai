@@ -1,6 +1,6 @@
 package trailProject.trail.course.entity;
 import lombok.*;
-import trailProject.trail.member.Account;
+import trailProject.trail.account.entity.Account;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -16,7 +16,6 @@ public class Course {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="course_id")
     private Long id;
-
     private String courseName;
     private LocalDateTime time;
     private String courseAddress;
