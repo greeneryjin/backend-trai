@@ -27,3 +27,4 @@ public class FacilityDetail {
     @JoinColumn(name="course_id")
     private Course course;
 }
+

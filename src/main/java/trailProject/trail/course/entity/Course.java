@@ -1,5 +1,4 @@
 package trailProject.trail.course.entity;
-
 import lombok.*;
 import trailProject.trail.member.Account;
 
