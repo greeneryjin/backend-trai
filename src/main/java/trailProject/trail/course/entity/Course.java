@@ -12,7 +12,6 @@ public class Course { //controller 할 때 /trail 붙이기
     @Column(name = "course_id")
     private Long id;
 
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "account_id")
     private Account account;
