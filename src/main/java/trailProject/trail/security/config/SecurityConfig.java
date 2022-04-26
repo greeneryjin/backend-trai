@@ -14,7 +14,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import org.springframework.web.filter.CorsFilter;
 import trailProject.trail.security.filter.JwtAuthenticationFilter;
-import trailProject.trail.security.filter.JwtAuthorizationFilter;
 import trailProject.trail.security.provider.JwtAuthenticationProvider;
 import trailProject.trail.security.repository.RefreshTokenRepository;
 import trailProject.trail.security.service.JwtAccountService;
@@ -69,8 +68,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilter(corsFilter)
                 //jwt 인증
                 .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
-                //jwt 인가
-                .addFilter(new JwtAuthorizationFilter(authenticationManager(), jwtAccountService, jwtProperties, repository))
                 //폼 로그인 안함
                 .formLogin().disable()
                 .httpBasic().disable()
