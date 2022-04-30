@@ -1,18 +1,17 @@
-package trailProject.trail.course.entity;
+package trailProject.trail.entity;
 
 import lombok.Data;
-
 import javax.persistence.*;
 
 @Entity
 @Data
+@Table(name="course_detail")
 public class CourseDetail {
     @Id @GeneratedValue
-    @Column(name="courseDetail_id")
+    @Column(name="course_detail_id")
     private Long id;
 
-    private String x;
-    private String y;
+    private String coordinateArray;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="course_id")

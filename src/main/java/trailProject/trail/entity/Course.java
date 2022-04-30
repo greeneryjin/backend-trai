@@ -1,6 +1,5 @@
-package trailProject.trail.course.entity;
+package trailProject.trail.entity;
 import lombok.*;
-import trailProject.trail.member.Account;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -10,12 +9,12 @@ import java.util.List;
 
 @Data
 @Entity
+@Table(name="course")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Course {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="course_id")
-    private Long id;
+    private Long courseId;
 
     private String courseName;
     private LocalDateTime time;
@@ -29,15 +28,12 @@ public class Course {
     @OneToMany(mappedBy = "course")
     private List<CourseDetail> courseDetails = new ArrayList<>();
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "")
-    private Account account;
-
     public Course(Long id, String courseName, String courseAddress, Integer courseDistance, Integer level) {
-        this.id = id;
+        this.courseId = id;
         this.courseName = courseName;
         this.courseAddress = courseAddress;
         this.courseDistance = courseDistance;
         this.level = level;
     }
+
 }
