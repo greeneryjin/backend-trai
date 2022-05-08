@@ -1,20 +1,22 @@
-package trailProject.trail.course.entity;
+package trailProject.trail.entity;
 
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import trailProject.trail.course.entity.Course;
 
 import javax.persistence.*;
 
 @Entity
 @Data
+@Table(name="facility_detail")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString(of = {"id", "type"})
 public class FacilityDetail {
 
     @Id @GeneratedValue
-    @Column(name="FacilityDetail_id")
+    @Column(name="Facility_Detail_id")
     private Long id;
 
     private String x;

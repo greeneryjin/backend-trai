@@ -3,10 +3,12 @@ package trailProject.trail.account.entity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+import trailProject.trail.course.entity.Course;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor
@@ -33,4 +35,5 @@ public class Account {
     public void roleSave(String role){
         this.roles = role;
     }
+
 }
