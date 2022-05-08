@@ -1,7 +1,6 @@
 package trailProject.trail.course.entity;
 import lombok.*;
 import trailProject.trail.facility.entity.Facility;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,9 +23,8 @@ public class Course {
 
     @OneToMany(mappedBy = "course")
     private List<Facility> facilities = new ArrayList<>();
-
-//    @OneToMany(mappedBy = "course")
-//    private List<CourseDetail> courseDetails = new ArrayList<>();
+    //    @OneToMany(mappedBy = "course")
+    //    private List<CourseDetail> courseDetails = new ArrayList<>();
 
     public Course(Long id, String courseName, String courseAddress, String courseDistance, String level) {
         this.courseId = id;
