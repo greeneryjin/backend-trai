@@ -4,7 +4,7 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import trailProject.trail.course.entity.Course;
-import trailProject.trail.course.entity.Type;
+import trailProject.trail.entity.Type;
 
 import javax.persistence.*;
 

@@ -23,6 +23,7 @@ public class Course {
 
     @OneToMany(mappedBy = "course")
     private List<Facility> facilities = new ArrayList<>();
+
     //    @OneToMany(mappedBy = "course")
     //    private List<CourseDetail> courseDetails = new ArrayList<>();
 
