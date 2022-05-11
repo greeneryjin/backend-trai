@@ -1,26 +1,34 @@
 package trailProject.trail.course.service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import trailProject.trail.course.dto.CourseDetailDto;
+import trailProject.trail.course.dto.CourseDto;
 import trailProject.trail.course.entity.Course;
+import trailProject.trail.course.entity.CourseDetail;
+import trailProject.trail.course.repository.CourseDetailRepository;
 import trailProject.trail.course.repository.CourseRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
-@Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class CourseService {
 
+    @Autowired
     private final CourseRepository courseRepository;
+    @Autowired
+    private final CourseDetailRepository courseDetailRepository;
 
-    //구 단위로 코스 리스트 보여주는거
-    public List<Course> findByCourseAddress(String courseAddress) {
-        PageRequest pageRequest = PageRequest.of(0, 6);
-        Page<Course> page = courseRepository.findByCourseAddress(courseAddress, pageRequest);
-        return page.getContent();
+    public List<CourseDto> findCourseByCourseAddress(String courseAddress) {
+        List<CourseDto> courseDtoList = courseRepository.findByCourseAddressContains(courseAddress);
+        return courseDtoList;
+    }
+
+    public CourseDetailDto findCourseDetailByCourseId(Long courseId) {
+        CourseDetailDto courseDetail = courseDetailRepository.findByCourseDetailId(courseId);
+        return courseDetail;
     }
 }

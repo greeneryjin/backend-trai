@@ -5,18 +5,20 @@ import lombok.Data;
 @Data
 public class CourseDto {
 
-    private Long id;
+    private Long courseId;
     private String courseName;
     private String courseAddress;
-    private Integer courseDistance;
-    private Integer level;
+    private String courseDistance;
+    private String level;
+    private String time;
 
-    public CourseDto(Long id, String courseName, String courseAddress, Integer courseDistance, Integer level) {
-        this.id = id;
+    public CourseDto(Long courseId, String courseName, String courseAddress, String courseDistance, String level, String time) {
+        this.courseId = courseId;
         this.courseName = courseName;
         this.courseAddress = courseAddress;
         this.courseDistance = courseDistance;
         this.level = level;
+        this.time = time;
     }
 
 }

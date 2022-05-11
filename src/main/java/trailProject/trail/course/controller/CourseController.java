@@ -1,39 +1,33 @@
 package trailProject.trail.course.controller;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import trailProject.trail.account.entity.Account;
+import trailProject.trail.account.repository.AccountRepository;
+import trailProject.trail.account.service.AccountService;
+import trailProject.trail.course.dto.CourseDetailDto;
+import trailProject.trail.course.dto.CourseDto;
 import trailProject.trail.course.entity.Course;
 import trailProject.trail.course.service.CourseService;
-
 import java.util.List;
 
 @RestController
-@RequiredArgsConstructor
 @RequestMapping("/trail")
 public class CourseController {
 
-    private final CourseService courseService;
+    @Autowired
+    private CourseService courseService;
 
-    @GetMapping("/course/list")
-    public void courseList(String courseAddress) {
-        List<Course> courses = courseService.findByCourseAddress(courseAddress);
-        for(Course course : courses){
-            System.out.println(course.getCourseName());
-        }
+    @GetMapping("/courseList")
+    public List<CourseDto> courseList(String courseAddress) {
+        List<CourseDto> courses = courseService.findCourseByCourseAddress(courseAddress);
+        return courses;
     }
 
-    @GetMapping("/course/start")
-    public String courseStart(Long userId) {
-        return "";
+    @GetMapping("/courseStart")
+    public CourseDetailDto courseStart(Long courseId) {
+        CourseDetailDto courseDetail = courseService.findCourseDetailByCourseId(courseId);
+        return courseDetail;
     }
-
-    @PostMapping("/course/finish")
-    public String courseFinish() {
-        return "";
-    }
-
 
 }
