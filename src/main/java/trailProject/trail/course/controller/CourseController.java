@@ -1,9 +1,15 @@
 package trailProject.trail.course.controller;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import trailProject.trail.account.entity.Account;
+import trailProject.trail.account.repository.AccountRepository;
+import trailProject.trail.account.service.AccountService;
 import trailProject.trail.course.dto.CourseDetailDto;
 import trailProject.trail.course.dto.CourseDto;
+import trailProject.trail.course.entity.Course;
+import trailProject.trail.course.entity.CourseDetail;
 import trailProject.trail.course.service.CourseService;
 import java.util.List;
 
@@ -25,10 +31,4 @@ public class CourseController {
         CourseDetailDto courseDetail = courseService.findCourseDetailByCourseId(courseId);
         return courseDetail;
     }
-
-//    @PostMapping("/courseFinish")
-//    public void courseFinish(Account account, Course course) {
-//        account.saveCourse(course);
-//    }
-
 }

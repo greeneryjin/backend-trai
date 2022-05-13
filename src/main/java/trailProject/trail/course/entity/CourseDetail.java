@@ -17,9 +17,9 @@ public class CourseDetail {
     @Lob
     private String coordinateArray;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name="course_id")
-//    private Course course;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="course_id")
+    private Course course;
 
     public CourseDetail(Long id, String coordinateArray) {
         this.courseDetailId = id;

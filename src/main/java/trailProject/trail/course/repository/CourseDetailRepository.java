@@ -9,6 +9,6 @@ import trailProject.trail.course.entity.CourseDetail;
 import java.util.List;
 
 public interface CourseDetailRepository extends JpaRepository<CourseDetail, Long> {
-    CourseDetailDto findByCourseDetailId(Long id);
+    CourseDetail findByCourseDetailId(Long id);
 
 }
