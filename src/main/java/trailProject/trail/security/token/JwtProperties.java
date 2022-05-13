@@ -23,7 +23,7 @@ public class JwtProperties {
         String accessToken = JWT.create()
                 .withSubject(account)
                 //한 달
-                .withExpiresAt(new Date(System.currentTimeMillis() + 5000 * 60 * 60 * 1000))
+                .withExpiresAt(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 9 *100))
                 .sign(algorithm);
         return accessToken;
     }
