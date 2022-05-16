@@ -5,7 +5,6 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Data
 @Entity
 @Table(name="course")
@@ -34,5 +33,4 @@ public class Course {
         this.courseDistance = courseDistance;
         this.level = level;
     }
-
 }

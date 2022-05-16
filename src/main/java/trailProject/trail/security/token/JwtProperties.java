@@ -38,11 +38,4 @@ public class JwtProperties {
                 .sign(algorithm);
         return refreshToken;
     }
-
-    //토큰 유효성 검사
-    public JWTVerifier verifierToken(){
-        Algorithm algorithm = Algorithm.HMAC256(secret.getBytes());
-        JWTVerifier verifier = JWT.require(algorithm).build();
-        return verifier;
-    }
 }

@@ -3,7 +3,6 @@ package trailProject.trail.security.filter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.SneakyThrows;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
@@ -12,8 +11,6 @@ import org.springframework.util.StringUtils;
 import trailProject.trail.account.dto.LoginDto;
 import trailProject.trail.account.entity.Account;
 import trailProject.trail.config.ResponseResult;
-import trailProject.trail.security.entity.RefreshToken;
-import trailProject.trail.security.repository.RefreshTokenRepository;
 import trailProject.trail.security.token.JwtProperties;
 import trailProject.trail.security.token.JwtUsernamePasswordAuthenticationToken;
 
@@ -29,9 +26,6 @@ public class JwtAuthenticationFilter extends AbstractAuthenticationProcessingFil
 
     private JwtProperties jwtProperties;
 
-    @Autowired
-    private RefreshTokenRepository repository;
-
     private ObjectMapper  om = new ObjectMapper();
 
     public JwtAuthenticationFilter(JwtProperties jwtProperties) {
@@ -45,11 +39,11 @@ public class JwtAuthenticationFilter extends AbstractAuthenticationProcessingFil
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException, IOException, ServletException {
         LoginDto loginDto = om.readValue(request.getReader(), LoginDto.class);
-        if(StringUtils.isEmpty(loginDto.getId()) || StringUtils.isEmpty(loginDto.getName())){
+        if(StringUtils.isEmpty(loginDto.getSnsId()) || StringUtils.isEmpty(loginDto.getName())){
             throw new IllegalAccessException("사용자 입력값이 없습니다.");
         }
         //인증 전 token 객체 생성
-        JwtUsernamePasswordAuthenticationToken token = new JwtUsernamePasswordAuthenticationToken(loginDto.getId(),loginDto.getName());
+        JwtUsernamePasswordAuthenticationToken token = new JwtUsernamePasswordAuthenticationToken(loginDto.getSnsId(),loginDto.getName());
         //인증 처리를 위해 AuthenticationManager 에게 위임.
         return getAuthenticationManager().authenticate(token);
     }
@@ -61,10 +55,6 @@ public class JwtAuthenticationFilter extends AbstractAuthenticationProcessingFil
         Account principal = (Account) authResult.getPrincipal();
         String accessToken = jwtProperties.createAccessToken(String.valueOf(principal.getId()));
         String refreshToken = jwtProperties.createRefreshToken(String.valueOf(principal.getId()));
-
-        //리프레시 토큰 db에 저장.
-        RefreshToken refreshEntity = new RefreshToken(refreshToken, principal.getId());
-        repository.save(refreshEntity);
 
         //맵에 넣기.
         Map<String, String> tokens = new HashMap<>();

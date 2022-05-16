@@ -5,5 +5,5 @@ import trailProject.trail.account.entity.Account;
 
 public interface AccountRepository extends JpaRepository<Account, Long> {
 
-    Account findAccountById(Long id);
+    Account findBySnsId(String snsId);
 }

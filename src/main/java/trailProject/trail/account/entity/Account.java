@@ -1,18 +1,16 @@
 package trailProject.trail.account.entity;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import trailProject.trail.course.entity.Course;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
-@Getter
-@NoArgsConstructor
 @Entity
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Account {
 
     @Id

@@ -24,8 +24,7 @@ public class JwtAccountService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String id) throws UsernameNotFoundException {
 
-        long userId = Long.parseLong(id);
-        Account account = accountRepository.findAccountById(userId);
+        Account account = accountRepository.findBySnsId(id);
 
         if(account == null){
             throw new UsernameNotFoundException("유저 정보가 디비에 없습니다.");

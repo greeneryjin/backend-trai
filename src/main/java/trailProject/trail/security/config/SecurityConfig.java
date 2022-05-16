@@ -15,7 +15,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.filter.CorsFilter;
 import trailProject.trail.security.filter.JwtAuthenticationFilter;
 import trailProject.trail.security.provider.JwtAuthenticationProvider;
-import trailProject.trail.security.repository.RefreshTokenRepository;
 import trailProject.trail.security.service.JwtAccountService;
 import trailProject.trail.security.token.JwtProperties;
 
@@ -26,9 +25,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final JwtProperties jwtProperties;
     private final CorsFilter corsFilter;
-    private final JwtAccountService jwtAccountService;
-
-    private final RefreshTokenRepository repository;
 
     //filter 설정
     @Override
