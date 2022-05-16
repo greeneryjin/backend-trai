@@ -3,6 +3,7 @@ package trailProject.trail.history.entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import trailProject.trail.account.entity.Account;
+import trailProject.trail.history.dto.save.HistoryDto;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -27,7 +28,16 @@ public class History {
     @JoinColumn(name = "account_id")
     private Account account;
 
+    public void saveAccount(Account account){
+        this.account = account;
+    }
 
+    public void saveHistory(HistoryDto historyDto) {
+        this.workComplete = historyDto.getWorkComplete();
+        this.workTime = historyDto.getWorkTime();
+        this.distance = historyDto.getDistance();
+        this.workDate = historyDto.getWorkDate();
+    }
 }
 
 

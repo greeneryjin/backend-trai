@@ -21,13 +21,13 @@ public class CourseController {
     private CourseService courseService;
 
     @GetMapping("/courseList")
-    public List<CourseDto> courseList(String courseAddress) {
+    public List<CourseDto> courseList(@RequestParam String courseAddress) {
         List<CourseDto> courses = courseService.findCourseByCourseAddress(courseAddress);
         return courses;
     }
 
     @GetMapping("/courseStart")
-    public CourseDetailDto courseStart(Long courseId) {
+    public CourseDetailDto courseStart(@RequestParam Long courseId) {
         CourseDetailDto courseDetail = courseService.findCourseDetailByCourseId(courseId);
         return courseDetail;
     }
