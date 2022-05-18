@@ -15,7 +15,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.filter.CorsFilter;
 import trailProject.trail.security.filter.JwtAuthenticationFilter;
 import trailProject.trail.security.provider.JwtAuthenticationProvider;
-import trailProject.trail.security.service.JwtAccountService;
 import trailProject.trail.security.token.JwtProperties;
 
 @Configuration
