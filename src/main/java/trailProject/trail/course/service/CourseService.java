@@ -1,6 +1,7 @@
 package trailProject.trail.course.service;
 
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import trailProject.trail.course.dto.CourseDetailDto;
@@ -9,7 +10,6 @@ import trailProject.trail.course.entity.Course;
 import trailProject.trail.course.entity.CourseDetail;
 import trailProject.trail.course.repository.CourseDetailRepository;
 import trailProject.trail.course.repository.CourseRepository;
-
 import java.util.*;
 
 @Service

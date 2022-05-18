@@ -42,4 +42,3 @@ public class History {
         this.CourseAddress = historyDto.getCourseAddress();
     }
 }
-

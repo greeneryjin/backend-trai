@@ -23,13 +23,13 @@ public class CourseController {
     private CourseService courseService;
 
     @GetMapping("/courseList")
-    public Result<List<CourseDto>> courseList(String courseAddress) {
+    public Result<List<CourseDto>> courseList(@RequestParam String courseAddress) {
         List<CourseDto> courses = courseService.findCourseByCourseAddress(courseAddress);
         return Result.res(StatusEnum.OK, "검색한 구의 코스리스트", "success", courses);
     }
 
     @GetMapping("/courseStart")
-    public Result<CourseDetailDto> courseStart(Long courseId) {
+    public Result<CourseDetailDto> courseStart(@RequestParam Long courseId) {
         CourseDetailDto courseDetail = courseService.findCourseDetailByCourseId(courseId);
         return Result.res(StatusEnum.OK, "선택한 코스 경로", "success", courseDetail);
     }
@@ -39,5 +39,4 @@ public class CourseController {
         List<String> guList = courseService.findCourseGu();
         return Result.res(StatusEnum.OK, "코스가 존재하는 구", "success", guList);
     }
-
 }

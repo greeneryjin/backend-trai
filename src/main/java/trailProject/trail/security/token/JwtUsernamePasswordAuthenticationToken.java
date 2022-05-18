@@ -14,8 +14,6 @@ public class JwtUsernamePasswordAuthenticationToken extends AbstractAuthenticati
     private final Object principal; //id (id)
     private Object credentials; //카카오 이름 (패스워드)
 
-    private Account account;
-
     /**
      *인증 전 객체.
      */
