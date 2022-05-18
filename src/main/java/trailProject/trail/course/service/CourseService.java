@@ -10,6 +10,7 @@ import trailProject.trail.course.entity.CourseDetail;
 import trailProject.trail.course.repository.CourseDetailRepository;
 import trailProject.trail.course.repository.CourseRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,5 +31,20 @@ public class CourseService {
     public CourseDetailDto findCourseDetailByCourseId(Long courseId) {
         CourseDetailDto courseDetail = courseDetailRepository.findByCourseDetailId(courseId);
         return courseDetail;
+    }
+
+    public List<String> findCourseGu() {
+        List<Course> courseList = courseRepository.findAll();
+        List<String> guList = new ArrayList<>();
+
+        for(Course course : courseList) {
+            int si = course.getCourseAddress().indexOf('시');
+            int gu = course.getCourseAddress().indexOf('구');
+            String str = course.getCourseAddress().substring(si+1, gu+1);
+            if(!guList.contains(str)) {
+                guList.add(str);
+            }
+        }
+        return guList;
     }
 }

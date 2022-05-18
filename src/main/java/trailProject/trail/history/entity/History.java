@@ -3,9 +3,9 @@ package trailProject.trail.history.entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import trailProject.trail.account.entity.Account;
+import trailProject.trail.history.dto.save.HistoryDto;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -18,12 +18,28 @@ public class History {
     @Column(name = "history_id")
     private Long id;
 
-    private LocalDateTime workTime;
-    private LocalDate workDate;
+    private String courseName;
+    private LocalDateTime workStartTime;
+    private LocalDateTime workFinishTime;
     private Integer distance;
     private Boolean workComplete;
+    private String CourseAddress;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "account_id")
     private Account account;
+
+    public void saveAccount(Account account){
+        this.account = account;
+    }
+
+    public void saveHistory(HistoryDto historyDto) {
+        this.courseName = historyDto.getCourseName();
+        this.workComplete = historyDto.getWorkComplete();
+        this.workStartTime = historyDto.getWorkStartTime();
+        this.distance = historyDto.getDistance();
+        this.workFinishTime = historyDto.getWorkFinishTime();
+        this.CourseAddress = historyDto.getCourseAddress();
+    }
 }
+

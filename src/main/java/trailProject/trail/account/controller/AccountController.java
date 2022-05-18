@@ -22,14 +22,14 @@ public class AccountController {
     @PostMapping("/signUp")
     public Result<Long> signUpAccount(@RequestBody LoginDto loginDto){
         String user = Role.USER.getGrantedAuthority();
-        Account account = new Account(loginDto.getId(), loginDto.getName());
+        Account account = new Account(loginDto.getSnsId(), loginDto.getName());
         account.roleSave(user);
         Account saveAccount = accountService.saveAccount(account);
         return Result.res(StatusEnum.OK, "회원가입이 완료되었습니다.", "success", saveAccount.getId());
     }
 
     //로그인
-    @GetMapping("/signIn")
+    @PostMapping("/signIn")
     public void signInAccount(){ }
 
     //인가 확인
@@ -37,4 +37,9 @@ public class AccountController {
     public Result<List<Account>> allUsers(){
         return Result.res(StatusEnum.OK, "회원이 조회됐습니다.", "success", this.accountService.findAll());
     }
+
+//    @GetMapping("/user/view/mypage")
+//    public Result<Account> userPage() {
+//        accountService.findUser();
+//    }
 }
