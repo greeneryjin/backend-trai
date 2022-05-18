@@ -29,7 +29,7 @@ public class AccountController {
     }
 
     //로그인
-    @GetMapping("/signIn")
+    @PostMapping("/signIn")
     public void signInAccount(){ }
 
     //인가 확인

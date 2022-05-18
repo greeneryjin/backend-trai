@@ -3,6 +3,7 @@ package trailProject.trail.account.entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import trailProject.trail.history.entity.History;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -17,13 +18,14 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "account_id")
     private Long id;
-
     private String snsId;
     private String name;
+    private String roles;
 
     private Integer distanceTotal;
     private LocalDate timeTotal;
-    private String roles;
+    private Integer workDistance;
+    private LocalDate workDate;
 
     public Account(String snsId, String name) {
         this.snsId = snsId;
@@ -33,5 +35,4 @@ public class Account {
     public void roleSave(String role){
         this.roles = role;
     }
-
 }

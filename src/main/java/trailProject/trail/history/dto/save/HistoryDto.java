@@ -10,8 +10,10 @@ import java.time.LocalDateTime;
 @Setter
 public class HistoryDto {
 
-    private LocalDateTime workTime;
-    private LocalDate workDate;
+    private String courseName;
+    private LocalDateTime workStartTime;
+    private LocalDateTime workFinishTime;
     private Integer distance;
     private Boolean workComplete;
+    private String CourseAddress;
 }
