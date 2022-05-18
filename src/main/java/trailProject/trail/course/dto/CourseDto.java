@@ -20,5 +20,4 @@ public class CourseDto {
         this.level = level;
         this.time = time;
     }
-
 }

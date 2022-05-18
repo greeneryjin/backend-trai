@@ -4,7 +4,6 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import trailProject.trail.course.entity.Course;
-
 import javax.persistence.*;
 
 @Data
@@ -18,9 +17,9 @@ public class CourseDetail {
     @Lob
     private String coordinateArray;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name="course_id")
-//    private Course course;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="course_id")
+    private Course course;
 
     public CourseDetail(Long id, String coordinateArray) {
         this.courseDetailId = id;
