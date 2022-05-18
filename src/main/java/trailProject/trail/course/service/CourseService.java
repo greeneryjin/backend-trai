@@ -10,11 +10,7 @@ import trailProject.trail.course.entity.Course;
 import trailProject.trail.course.entity.CourseDetail;
 import trailProject.trail.course.repository.CourseDetailRepository;
 import trailProject.trail.course.repository.CourseRepository;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -48,6 +44,7 @@ public class CourseService {
         return courseDtoList;
     }
 
+
     public CourseDetailDto findCourseDetailByCourseId(Long courseId) {
         CourseDetail courseDetail = courseDetailRepository.findByCourseDetailId(courseId);
         String[] coordinateArray = courseDetail.getCoordinateArray().replaceAll("[^0-9.]", " ").trim().split("\\s+");
@@ -59,5 +56,20 @@ public class CourseService {
         }
         CourseDetailDto courseDetailDto = new CourseDetailDto(courseDetail.getCourseDetailId(), map);
         return courseDetailDto;
+    }
+
+    public List<String> findCourseGu() {
+        List<Course> courseList = courseRepository.findAll();
+        List<String> guList = new ArrayList<>();
+
+        for(Course course : courseList) {
+            int si = course.getCourseAddress().indexOf('시');
+            int gu = course.getCourseAddress().indexOf('구');
+            String str = course.getCourseAddress().substring(si+1, gu+1);
+            if(!guList.contains(str)) {
+                guList.add(str);
+            }
+        }
+        return guList;
     }
 }

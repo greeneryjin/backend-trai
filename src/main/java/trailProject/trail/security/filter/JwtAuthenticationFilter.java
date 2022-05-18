@@ -51,7 +51,7 @@ public class JwtAuthenticationFilter extends AbstractAuthenticationProcessingFil
     //인증 완료 후 response jwt 토큰 발행
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response
-                                            , FilterChain chain, Authentication authResult) throws IOException, ServletException {
+            , FilterChain chain, Authentication authResult) throws IOException, ServletException {
         Account principal = (Account) authResult.getPrincipal();
         String accessToken = jwtProperties.createAccessToken(String.valueOf(principal.getId()));
         String refreshToken = jwtProperties.createRefreshToken(String.valueOf(principal.getId()));
