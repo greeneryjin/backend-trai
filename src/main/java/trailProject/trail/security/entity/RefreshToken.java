@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @Entity
 public class RefreshToken {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "refreshToken_id")

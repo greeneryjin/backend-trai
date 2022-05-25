@@ -43,7 +43,7 @@ public class Result<T> {
     }
 
     //데이터가 있을 경우.
-    public static<T> Result<T> res(final int statusCode, final String responseMessage,final String check, final T data) {
+    public static<T> Result<T> res(final int statusCode, final String responseMessage, final String check, final T data) {
         return (Result<T>) Result.builder()
                 .data(data)
                 .status(statusCode)

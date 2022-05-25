@@ -3,7 +3,7 @@ package trailProject.trail.facility.entity;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import trailProject.trail.course.entity.Course;
+import trailProject.trail.course.entity.Detail;
 
 import javax.persistence.*;
 
@@ -14,7 +14,7 @@ import javax.persistence.*;
 public class Facility {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="Facility_id")
+    @Column(name="facility_id")
     private Long facilityId;
     private String facilityName;
     private String x;
@@ -24,8 +24,8 @@ public class Facility {
     private Type type;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="course_id")
-    private Course course;
+    @JoinColumn(name="detail_id")
+    private Detail detail;
 
     public Facility(Long facilityId, String facilityName, String x, String y) {
         this.facilityId = facilityId;
