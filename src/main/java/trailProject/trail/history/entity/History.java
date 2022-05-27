@@ -22,8 +22,9 @@ public class History {
     private LocalDateTime workStartTime;
     private LocalDateTime workFinishTime;
     private Integer distance;
-    private Boolean workComplete;
-    private String CourseAddress;
+
+    //private Boolean workComplete;
+    private String courseAddress;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "account_id")
@@ -35,11 +36,10 @@ public class History {
 
     public void saveHistory(HistoryDto historyDto) {
         this.courseName = historyDto.getCourseName();
-        this.workComplete = historyDto.getWorkComplete();
+        //this.workComplete = historyDto.getWorkComplete();
         this.workStartTime = historyDto.getWorkStartTime();
         this.distance = historyDto.getDistance();
         this.workFinishTime = historyDto.getWorkFinishTime();
-        this.CourseAddress = historyDto.getCourseAddress();
+        this.courseAddress = historyDto.getCourseAddress();
     }
 }
-

@@ -190,7 +190,7 @@ public class CourseService {
         Map<String, String> facilityMap = new HashMap<>();
         for (Facility facility : facilityList) {
             facilityMap.put(facility.getX(), facility.getY());
-            FacilityDto facilityDto = new FacilityDto(facility.getFacilityId(), facility.getFacilityName(), facilityMap);
+            FacilityDto facilityDto = new FacilityDto(facility.getFacilityId(), facility.getFacilityName(), facility.getType(),facilityMap);
             facilityDtoList.add(facilityDto);
         }
         detailDto.setFacilityDtoList(facilityDtoList);

@@ -18,7 +18,7 @@ public class HistoryViewDto {
     public HistoryViewDto(History history) {
         this.workStartTime = history.getWorkStartTime();
         this.distance = history.getDistance();
-        this.workComplete = history.getWorkComplete();
+        //this.workComplete = history.getWorkComplete();
         this.courseName = history.getCourseName();
         this.CourseAddress = history.getCourseAddress();
     }
