@@ -1,18 +1,21 @@
 package trailProject.trail.facility.dto;
 
 import lombok.Data;
+import trailProject.trail.facility.entity.Type;
+
+import java.util.Map;
 
 @Data
 public class FacilityDto {
     private Long facilityId;
     private String facilityName;
-    private String x;
-    private String y;
+    private Type type;
+    private Map<String, String> coordinate;
 
-    public FacilityDto(Long facilityId, String facilityName, String x, String y) {
+    public FacilityDto(Long facilityId, String facilityName, Type type, Map<String, String> coordinate) {
         this.facilityId = facilityId;
         this.facilityName = facilityName;
-        this.x = x;
-        this.y = y;
+        this.type = type;
+        this.coordinate = coordinate;
     }
 }
