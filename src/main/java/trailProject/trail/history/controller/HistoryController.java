@@ -20,7 +20,7 @@ public class HistoryController {
     @Autowired
     HistoryService historyService;
 
-    @PostMapping("/user/history/save")
+    @PostMapping("/user/courseSave")
     public Result<String> saveHistory(@RequestBody HistoryDto historyDto){
         historyService.saveHistory(historyDto);
         return Result.res(StatusEnum.OK, "히스토리가 저장됐습니다.", "ok");
