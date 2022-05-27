@@ -7,6 +7,6 @@ import trailProject.trail.history.entity.History;
 
 public interface HistoryRepository extends JpaRepository<History, Long> {
 
-    Page<History> findByAccount(Pageable pageable, Long id);
+    Page<History> findAllByAccountId(Pageable pageable, Long id);
 
 }

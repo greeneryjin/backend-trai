@@ -7,8 +7,6 @@ import trailProject.trail.account.entity.Account;
 
 import java.util.Collection;
 
-//인증을 위한 객체 생성.
-
 @Getter
 public class AccountContext extends User {
 

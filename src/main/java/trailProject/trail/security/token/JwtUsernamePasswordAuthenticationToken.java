@@ -30,7 +30,7 @@ public class JwtUsernamePasswordAuthenticationToken extends AbstractAuthenticati
     public JwtUsernamePasswordAuthenticationToken(Object principal, Object credentials, Collection<? extends GrantedAuthority> authorities) {
         super(authorities);
         this.principal = principal;
-        this.credentials = credentials; //비밀번호는 보안을 위해 null로 사용.
+        this.credentials = credentials;
         super.setAuthenticated(true);
     }
 
