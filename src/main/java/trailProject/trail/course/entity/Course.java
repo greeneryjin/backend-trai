@@ -23,8 +23,8 @@ public class Course {
     @OneToMany(mappedBy = "course")
     private List<Facility> facilities = new ArrayList<>();
 
-    //    @OneToMany(mappedBy = "course")
-    //    private List<CourseDetail> courseDetails = new ArrayList<>();
+    @OneToMany(mappedBy = "course")
+    private List<CourseDetail> courseDetails = new ArrayList<>();
 
     public Course(Long id, String courseName, String courseAddress, String courseDistance, String level) {
         this.courseId = id;
