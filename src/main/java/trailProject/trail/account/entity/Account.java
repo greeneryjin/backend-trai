@@ -3,6 +3,7 @@ package trailProject.trail.account.entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import trailProject.trail.history.dto.save.HistoryDto;
 import trailProject.trail.history.entity.History;
 
 import javax.persistence.*;
@@ -23,9 +24,10 @@ public class Account {
     private String roles;
 
     private Integer distanceTotal;
-    private LocalDate timeTotal;
-    private Integer workDistance;
-    private LocalDate workDate;
+    private Integer timeTotal;
+    private Integer stepCountTotal;
+
+    private long lastWorkDate;
 
     public Account(String snsId, String name) {
         this.snsId = snsId;
@@ -34,5 +36,12 @@ public class Account {
 
     public void roleSave(String role){
         this.roles = role;
+    }
+
+    public void saveWork(int distance, int step, int time, long lastWorkDate) {
+        distanceTotal = distance;
+        timeTotal = time;
+        stepCountTotal = step;
+        this.lastWorkDate = lastWorkDate;
     }
 }
