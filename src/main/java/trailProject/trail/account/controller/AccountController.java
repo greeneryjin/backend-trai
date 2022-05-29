@@ -1,6 +1,8 @@
 package trailProject.trail.account.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import trailProject.trail.account.dto.AccountDto;
 import trailProject.trail.account.dto.LoginDto;
@@ -38,5 +40,11 @@ public class AccountController {
         Account account = accountService.findUser();
         AccountDto accountDto = new AccountDto(account.getName(), account.getLastWorkDate(), account.getDistanceTotal(), account.getTimeTotal(), account.getStepCountTotal());
         return Result.res(StatusEnum.OK, "", "success", accountDto);
+    }
+
+    @GetMapping("/location")
+    public Result<String> userLocation(@RequestBody String location) {
+        Account account = accountService.saveLocation(location);
+        return Result.res(StatusEnum.OK, "위치가 저장되었습니다.", "success", account.getLocation());
     }
 }

@@ -25,7 +25,6 @@ public class History {
 
     //private Boolean workComplete;
     private String courseAddress;
-    private Integer stepCount;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "account_id")
