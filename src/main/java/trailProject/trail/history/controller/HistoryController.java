@@ -11,8 +11,6 @@ import trailProject.trail.history.dto.view.HistoryViewDto;
 import trailProject.trail.history.entity.History;
 import trailProject.trail.history.service.HistoryService;
 
-import java.util.stream.Collectors;
-
 @RestController
 @RequestMapping("/trail")
 public class HistoryController {

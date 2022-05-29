@@ -1,5 +1,6 @@
 package trailProject.trail.course.controller;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import trailProject.trail.account.entity.Account;
@@ -49,6 +50,6 @@ public class CourseController {
     public Result<List<String>> courseGu() {
         List<String> guList = courseService.findCourseGu();
         return Result.res(StatusEnum.OK, "코스가 존재하는 구", "success", guList);
-    }
 
+    }
 }
