@@ -22,6 +22,7 @@ public class Account {
     private String snsId;
     private String name;
     private String roles;
+    private String location;
 
     private Integer distanceTotal;
     private Integer timeTotal;
@@ -43,5 +44,9 @@ public class Account {
         timeTotal = time;
         stepCountTotal = step;
         this.lastWorkDate = lastWorkDate;
+    }
+
+    public void locationSave(String location){
+        this.location = location;
     }
 }

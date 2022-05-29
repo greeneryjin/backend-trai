@@ -26,11 +26,20 @@ public class AccountService {
     }
 
     public Account findUser() {
-
         //사용자 가지고 오기
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Account accountId = (Account) authentication.getPrincipal();
         Account account = accountRepository.findBySnsId(accountId.getSnsId());
+        return account;
+    }
+
+    public Account saveLocation(String location) {
+        //사용자 가지고 오기
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        Account accountId = (Account) authentication.getPrincipal();
+        Account account = accountRepository.findBySnsId(accountId.getSnsId());
+
+        account.locationSave(location);
         return account;
     }
 }
