@@ -13,6 +13,10 @@ import trailProject.trail.history.dto.save.HistoryDto;
 import trailProject.trail.history.entity.History;
 import trailProject.trail.history.repository.HistoryRepository;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+
 @Service
 public class HistoryService {
 
@@ -35,6 +39,18 @@ public class HistoryService {
         history.saveAccount(account);
         history.saveHistory(historyDto);
         historyRepository.save(history);
+
+        LocalDateTime workFinishTime = historyDto.getWorkFinishTime();
+        LocalDate localDate = LocalDate.now();
+        LocalDate workFinish = LocalDate.from(workFinishTime);
+        long lastWorkDate = workFinish.until(localDate, ChronoUnit.DAYS);
+
+        int distance = account.getDistanceTotal() + historyDto.getDistance();
+        int step = account.getStepCountTotal() + historyDto.getStepCount();
+        int time = account.getTimeTotal() + historyDto.getWorkTime();
+
+        //사용자 운동 저장
+        account.saveWork(distance, step, time, lastWorkDate);
     }
 
     @Transactional(readOnly = true)
