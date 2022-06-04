@@ -15,7 +15,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 @RestController
-@RequestMapping("/trail")
+@RequestMapping("/")
 public class CourseController {
 
     @Autowired
@@ -24,7 +24,7 @@ public class CourseController {
     @Autowired
     AccountRepository accountRepository;
 
-    @GetMapping("/course")
+    @GetMapping("course")
     public Result<List<CourseDto>> courseList(@RequestParam String level,
                                               @RequestParam String toilet,
                                               @RequestParam String charge,
@@ -40,13 +40,13 @@ public class CourseController {
         return Result.res(StatusEnum.OK, "검색한 구의 코스리스트", "success", courses);
     }
 
-    @GetMapping("/detail")
+    @GetMapping("detail")
     public Result<DetailDto> courseStart(@RequestParam Long courseId) {
         DetailDto detailDto = courseService.findDetailByCourseId(courseId);
         return Result.res(StatusEnum.OK, "선택한 코스 경로", "success", detailDto);
     }
 
-    @GetMapping("/address")
+    @GetMapping("address")
     public Result<List<String>> courseGu() {
         List<String> guList = courseService.findCourseGu();
         return Result.res(StatusEnum.OK, "코스가 존재하는 구", "success", guList);

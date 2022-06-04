@@ -15,14 +15,14 @@ import trailProject.trail.config.StatusEnum;
 import java.util.List;
 
 @RestController
-@RequestMapping("/trail")
+@RequestMapping("/")
 public class AccountController {
 
     @Autowired
     private AccountService accountService;
 
     //회원가입
-    @PostMapping("/signUp")
+    @PostMapping("signUp")
     public Result<Long> signUpAccount(@RequestBody LoginDto loginDto){
         String user = Role.USER.getGrantedAuthority();
         Account account = new Account(loginDto.getSnsId(), loginDto.getName());
@@ -32,19 +32,19 @@ public class AccountController {
     }
 
     //로그인
-    @PostMapping("/signIn")
+    @PostMapping("signIn")
     public void signInAccount(){ }
 
-    @GetMapping("/user/view/myPage")
+    @GetMapping("user/view/myPage")
     public Result<AccountDto> userPage() {
         Account account = accountService.findUser();
         AccountDto accountDto = new AccountDto(account.getName(), account.getLastWorkDate(), account.getDistanceTotal(), account.getTimeTotal(), account.getStepCountTotal());
         return Result.res(StatusEnum.OK, "", "success", accountDto);
     }
 
-    @GetMapping("/location")
-    public Result<String> userLocation(@RequestBody String location) {
-        Account account = accountService.saveLocation(location);
-        return Result.res(StatusEnum.OK, "위치가 저장되었습니다.", "success", account.getLocation());
+    @PostMapping("userLocation")
+    public Result<String> userLocation(@RequestParam String location) {
+        accountService.saveLocation(location);
+        return Result.res(StatusEnum.OK, "위치가 저장되었습니다.", "success",location);
     }
 }

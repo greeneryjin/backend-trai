@@ -35,12 +35,13 @@ public class AccountService {
     }
 
     @Transactional
-    public Account saveLocation(String location) {
+    public void saveLocation(String location) {
         //사용자 가지고 오기
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Account accountId = (Account) authentication.getPrincipal();
         Account account = accountRepository.findBySnsId(accountId.getSnsId());
+
         account.locationSave(location);
-        return account;
+        accountRepository.save(account);
     }
 }

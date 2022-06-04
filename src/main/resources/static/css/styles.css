@@ -1,0 +1,381 @@
+@font-face {
+    font-family: 'ACCchildrenheartOTF-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112-2@1.0/ACCchildrenheartOTF-Regular.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    background-color :#f7f2ec;
+    background: linear-gradient( to bottom, #f7f2ec, rgb(207, 229, 199) );
+}
+
+/* 모바일용 CSS */
+.container {
+    width: 90%;
+    max-width: 1132px;
+    margin: 0 auto;
+    font-family: 'ACCchildrenheartOTF-Regular';
+}
+
+fas {
+    padding : 50px;
+}
+
+.cfixed:after,
+.container:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.blind {
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+.sec-tit {
+    font-size: 50px;
+    color: #5F7161;
+    font-family: 'ACCchildrenheartOTF-Regular';
+}
+
+article .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'ACCchildrenheartOTF-Regular';
+    font-size: 100px;
+    padding-top : 25px;
+    height: 200px;
+    color :#1d3a1d
+}
+
+a {
+    text-decoration-line: none;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+.divider {
+    width: 90%;
+    max-width: 1132px;
+    margin: 0 auto;
+    margin-top: 77px;
+    background: wheat;
+}
+
+.m-divider {
+    width: 20px;
+    margin: 0 auto;
+    margin-top: 77px;
+    background: wheat;
+}
+
+/* 헤더 영역 CSS */
+.header {
+    position: relative;
+    padding: 18px 5%;
+    font-family: 'ACCchildrenheartOTF-Regular';
+}
+
+.header .logo {
+    float: left;
+}
+
+.header .logo a {
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.header .gnb {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+}
+
+.header .gnb li {
+    border-bottom: 1px solid;
+}
+
+.header .gnb li a {
+    display: block;
+    padding: 14px 0 14px 5%;
+    font-size: 14px;
+    color: #fff;
+    font-family: 'ACCchildrenheartOTF-Regular';
+}
+
+.header .menu-toggle-btn {
+    float: right;
+    width: 20px;
+    margin-top: 4px;
+    cursor: pointer;
+    color:black
+}
+
+.header .menu-toggle-btn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color:black;
+}
+
+.header .menu-toggle-btn span:nth-child(2) {
+    margin: 5px 0;
+}
+
+
+/* what is 영역 CSS */
+.what_is-section {
+    margin-top: 59px;
+    text-align: center;
+}
+
+.what_is-section .sec-tit {
+    margin-bottom: 30px;
+}
+
+.what_is-section .desc {
+    font-family: 'ACCchildrenheartOTF-Regular';
+    line-height: 1.5;
+}
+
+
+/* for who 영역 CSS */
+.for_who-section {
+    margin-top: 68px;
+    text-align: center;
+}
+
+.for_who-section .for_who-list {
+    margin-top: 52px;
+    text-align: center;
+}
+
+.for_who-section .for_who-list li {
+    margin-top: 52px;
+    text-align: center;
+}
+
+.for_who-section .for_who-list li:first-child {
+    margin-top: 50px;
+}
+
+.for_who-section .for_who-list li h3 {
+    font-size : 45px;
+    margin: 29px 0px 20px 0;
+}
+
+.for_who-section .for_who-list li p {
+    font-size: 20px;
+    font-family: 'ACCchildrenheartOTF-Regular';
+    line-height: 1.5;
+}
+.for_who-section .for_who-list .info {
+    text-align: center;
+}
+
+
+/* functions 영역 CSS */
+.functions-section {
+    margin-top: 73px;
+    text-align: center;
+}
+
+.functions-section .functions-list {
+    margin-top: 52px;
+    text-align : center;
+}
+
+.functions-section .functions-list li {
+    margin-bottom: 50px;
+    background: linear-gradient( to bottom, rgb(222, 235, 215), rgb(187, 190, 186) );
+    border-radius: 10% / 50%;
+
+}
+
+.functions-section .functions-list li .info {
+    line-height: 40px;
+}
+
+.functions-section .functions-list .info {
+    font-size: 25px;
+}
+
+
+/* how to use 영역 CSS */
+.use-section {
+    margin-top: 77px;
+}
+
+.use-section .sec-tit {
+    margin-bottom: 47px;
+    text-align: center;
+}
+
+
+/* Thank you 영역 CSS */
+.thanks-section {
+    margin-top: 109px;
+}
+
+.thanks-section .sec-tit {
+    margin-bottom: 47px;
+    text-align: center;
+}
+
+
+/* 푸터 영역 CSS */
+.footer {
+    margin-top: 104px;
+}
+
+.footer iframe {
+    width: 100%;
+    height: 320px;
+}
+
+.footer p {
+    margin: 21px 0;
+    text-align: center;
+    font-family: 'ACCchildrenheartOTF-Regular';
+    font-size: 40px;
+}
+
+
+/* 태블릿용 CSS */
+@media all and (min-width:768px) {
+
+    /* 기본 CSS */
+    .divider {
+        margin-top: 124px;
+    }
+
+    .m-divider {
+        margin-top: 124px;
+    }
+
+
+    /* 헤더 영역 CSS */
+    .header {
+        position: static;
+        padding: 28px 52px;
+    }
+
+    .header .gnb {
+        display: block !important;
+        position: static;
+        float: right;
+        width: auto;
+        margin-top: 6px;
+        background: none;
+    }
+
+    .header .gnb li {
+        float: left;
+        margin-left: 21px;
+        border-bottom: 0;
+    }
+
+    .header .gnb li a {
+        padding: 0;
+        font-size: 16px;
+        color : black;
+    }
+
+    .header .menu-toggle-btn {
+        display: none !important;
+    }
+
+}
+
+/* PC용 CSS */
+@media all and (min-width:1132px) {
+
+    .main {
+        margin-top: 0px;
+    }
+    /* 디스플레이 영역 CSS */
+    .what_is-section {
+        text-align: left;
+    }
+
+    .what_is-section .sec-tit {
+        /* float: left; */
+        margin-bottom: 40px;
+    }
+
+    .what_is-section .desc {
+        position: relative;
+        float: right;
+        padding-top: 35px;
+        font-size: 24px;
+        font-family: 'ACCchildrenheartOTF-Regular';
+        color: #000000;
+        line-height: 1.9;
+    }
+
+    /* for who 영역 CSS */
+    .for_who-section .sec-tit {
+        /* float: left; */
+        margin-bottom: 0;
+        text-align: start;
+    }
+
+    .for_who-section .for_who-list li {
+        float: left;
+        /* width: 23.67491166077739%; */
+        /* 268px ÷ 1132px*/
+        width: 23%;
+        height: 100%;
+        margin-left: 1.76678445229682%;
+        /* 20px ÷ 1132px*/
+    }
+
+
+    /* functions 영역 CSS */
+    .functions-section .sec-tit {
+        text-align: left;
+    }
+
+    .functions-section .functions-list li {
+        text-align: center;
+        width : 310px;
+        height: 140px;
+        float: left;
+        margin-right: 9px;
+    }
+
+    .functions-section .functions-list li:nth-child(2) {
+        width : 230px;
+    }
+
+    .functions-section .functions-list li:nth-child(4) {
+        width : 230px;
+    }
+
+    .functions-section .functions-list .info {
+        padding-top: 15px;
+    }
+
+
+    /* how to use 영역 CSS */
+    .use-section .sec-tit {
+        float: left;
+        margin-bottom: 0;
+    }
+
+}
