@@ -179,7 +179,7 @@ public class CourseService {
         Map<String, String> detailmap = new LinkedHashMap<>();
         for (int i = 0; i < coordinateArray.length-1; i+=2) {
             for (int j = i; j == i ; j++) {
-                detailmap.put(coordinateArray[i], coordinateArray[i+1]);
+                detailmap.put(coordinateArray[i+1], coordinateArray[i]);
             }
         }
         DetailDto detailDto = new DetailDto(detail.getDetailId(), detailmap);
