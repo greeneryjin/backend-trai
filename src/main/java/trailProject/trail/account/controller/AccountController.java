@@ -3,11 +3,13 @@ package trailProject.trail.account.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import trailProject.trail.account.dto.AccountDto;
 import trailProject.trail.account.dto.LoginDto;
 import trailProject.trail.account.entity.Account;
 import trailProject.trail.account.entity.enums.Role;
+import trailProject.trail.account.repository.AccountRepository;
 import trailProject.trail.account.service.AccountService;
 import trailProject.trail.config.Result;
 import trailProject.trail.config.StatusEnum;
@@ -20,6 +22,10 @@ public class AccountController {
 
     @Autowired
     private AccountService accountService;
+
+    @Autowired
+    private AccountRepository accountRepository;
+
 
     //회원가입
     @PostMapping("signUp")
