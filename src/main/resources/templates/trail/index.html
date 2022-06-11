@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale-1, user-scalable=no">
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <link rel="stylesheet" th:href="@{/css/reset.css}" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="shortcut icon" th:href="@{/images/favicon.ico}" type="image/x-icon">
+    <link rel="icon" th:href="@{/images/favicon.ico}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;500;600&family=Nanum+Gothic+Coding:wght@400;700&family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <script th:src="@{js/jquery.min.js}"></script>
+    <script th:src="@{js/toggle.min.js}"></script>
+    <title>늘솔길</title>
+</head>
+
+<body>
+<div id="wrap">
+    <header class="header cfixed">
+        <h1 class="logo">
+            <a href="#main">
+                <img th:href="@{/images/trail_app_icon.png}" width="27">
+                <span>늘솔길</span>
+            </a>
+        </h1>
+        <nav>
+            <!--gnb : global navigation bar-->
+            <ul class="gnb">
+                <li><a href="#what">WHAT</a></li>
+                <li><a href="#who">WHO</a></li>
+                <li><a href="#functions">FUNCTIONS</a></li>
+                <li><a href="#use">HOW TO USE</a></li>
+            </ul>
+        </nav>
+        <span class="menu-toggle-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+    </header>
+
+    <article class="main">
+        <div class="title" id="main">
+            <font size="10px">(WELCOME)</font>
+            늘솔길
+        </div>
+    </article>
+
+    <hr class="divider" id="what">
+    <section class="content">
+        <section class="what_is-section">
+            <div class="container">
+                <h2 class="sec-tit">WHAT IS ?</h2>
+                <p class="desc">
+                    <font size="20px">"늘솔길"</font>은 거동에 불편함이 있어 산책에 어려움을 겪는 교통약자들에게
+                    산책 활동을 위한 최적의 코스 솔루션을 제공하는 앱 서비스입니다.
+                    각 코스에 존재하는 보행장애물과 편의시설 등의 구체적인 정보를 제공해줌으로써
+                    교통약자들이 느꼈던 불편함을 해소해주고, 안전하게 산책을 즐길 수 있도록 도와줄 수 있습니다.
+                    나아가 자신이 산책을 통해 운동한 기록들을 저장하여 건강 관리에 대한 흥미를 높이고 야외활동에 대한 의욕을 고취시켜 야외활동을 하면서 느낄 수 있는 심리적 진입 장벽을 낮춰줍니다.
+
+                </p>
+            </div>
+        </section>
+        <hr class="m-divider" id="who">
+
+        <section class="for_who-section">
+            <div class="container">
+                <h2 class="sec-tit">FOR WHO</h2>
+                <ul class="for_who-list">
+                    <li>
+                        <i class="fas fa-baby-carriage fa-7x"></i>
+                        <h3>유모차</h3>
+                        <p>어린아이와 함께 즐길 수 있는 산책</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-wheelchair fa-7x fa-7x"></i>
+                        <h3>휠체어</h3>
+                        <p>교통약자도 편히 즐길 수 있는 길</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-biking fa-7x fa-7x"></i>
+                        <h3>자전거</h3>
+                        <p>자전거 이용하는 사람도 편리하게<br> 즐길 수 있는 코스</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-walking fa-7x"></i>
+                        <h3>가벼운 걷기 운동</h3>
+                        <p>누구나 가볍게 산책할 수 있는<br> 안전한 길</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <hr class="m-divider" id="functions">
+        <section class="functions-section">
+            <div class="container">
+                <h2 class="sec-tit">FUNCTIONS</h2>
+                <ul class="functions-list">
+                    <li>
+                        <div class="info">
+                            <h3>01</h3>
+                            <p>교통 약자들이 이용하기 편리한<br> 산책길 코스 추천</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="info">
+                            <h3>02</h3>
+                            <p>보행장애물과 편의시설 등의 구체적인 정보를 제공</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="info">
+                            <h3>03</h3>
+                            <p>산책 기록을 저장해주는 히스토리</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="info">
+                            <h3>04</h3>
+                            <p>운동 효과 증진</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <hr class="m-divider" id="use">
+
+        <section class="use-section">
+            <div class="container">
+                <h2 class="sec-tit">WE'RE MAIN PAGES</h2>
+                <div id="slideShow">
+                    <ul class="slides">
+                        <li><img th:src="@{images/splash.jpg}" width="300" height="600" alt=""></li>
+                        <li><img th:src="@{images/login.jpg}" width="300" height="600" alt=""></li>
+                        <li><img th:src="@{images/adress.jpg}" width="300" height="600" alt=""></li>
+                        <li><img th:src="@{images/home.jpg}" width="300" height="600" alt=""></li>
+                        <li><img th:src="@{images/courselist.jpg}" width="300" height="600" alt=""></li>
+                        <li><img th:src="@{images/map.jpg}" width="300" height="600" alt=""></li>
+                        <li><img th:src="@{images/history.jpg}" width="300" height="600" alt=""></li>
+                        <li><img th:src="@{images/mypage.jpg}" width="300" height="600" alt=""></li>
+                    </ul>
+                    <p class="controller">
+                        <!-- &lang: 왼쪽 방향 화살표 &rang: 오른쪽 방향 화살표 -->
+                        <span class="prev">&lang;</span>
+                        <span class="next">&rang;</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <section class="thanks-section">
+            <div class="container">
+                <h2 class="sec-tit">THANK YOU  :)</h2>
+            </div>
+        </section>
+    </section>
+
+    <footer class="footer">
+        <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.111677235935!2d126.97473421573828!3d37.575987879796195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2eaa19c763d%3A0xb28a32722d675764!2z6rSR7ZmU66y4KEd3YW5naHdhbXVuIEdhdGUp!5e0!3m2!1sko!2skr!4v1481946656451" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+        <div class="copyright">
+            <img th:src="@{/images/trail_app_icon.png}" width="35">
+            <span>늘솔길</span>
+        </div>
+    </footer>
+</div>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;500;600&family=Nanum+Gothic+Coding:wght@400;700&family=Nanum+Gothic:wght@400;700&display=swap');
+</style>
+<script th:src="@{/js/slider.js}"></script>
+<script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -23,6 +23,7 @@ public class HistoryViewDto {
         this.courseName = history.getCourseName();
         this.CourseAddress = history.getCourseAddress();
     }
+
     public String changeTimeFormat(LocalDateTime localDateTime) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 HH시 mm분");
         String formatted = localDateTime.format(formatter);

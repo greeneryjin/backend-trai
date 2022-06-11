@@ -170,7 +170,7 @@ public class CourseService {
         Course course = courseRepository.findByCourseId(courseId);
         Detail detail = detailRepository.findByCourse(course);
         String[] coordinateArray = detail.getCoordinateArray().replaceAll("[^0-9.]", " ").trim().split("\\s+");
-//        Map<String, String> detailmap = new LinkedHashMap<>();
+        Map<String, String> detailmap = new LinkedHashMap<>();
         ArrayList<CoordinateDto> detailArr = new ArrayList<>();
         for (int i = 0; i < coordinateArray.length-1; i+=2) {
             for (int j = i; j == i ; j++) {

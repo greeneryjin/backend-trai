@@ -12,19 +12,19 @@ import trailProject.trail.history.entity.History;
 import trailProject.trail.history.service.HistoryService;
 
 @RestController
-@RequestMapping("/trail")
+@RequestMapping("/")
 public class HistoryController {
 
     @Autowired
     HistoryService historyService;
 
-    @PostMapping("/user/courseSave")
+    @PostMapping("user/courseSave")
     public Result<String> saveHistory(@RequestBody HistoryDto historyDto){
         historyService.saveHistory(historyDto);
         return Result.res(StatusEnum.OK, "히스토리가 저장됐습니다.", "ok");
     }
 
-    @GetMapping("/user/history/view")
+    @GetMapping("user/history/view")
     public Result<Page<HistoryViewDto>> viewHistory(Pageable pageable){
         Page<History> histories = historyService.viewHistory(pageable);
         Page<HistoryViewDto> historyViewDtos = histories

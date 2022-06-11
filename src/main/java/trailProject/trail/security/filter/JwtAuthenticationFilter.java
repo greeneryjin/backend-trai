@@ -29,7 +29,7 @@ public class JwtAuthenticationFilter extends AbstractAuthenticationProcessingFil
     private ObjectMapper  om = new ObjectMapper();
 
     public JwtAuthenticationFilter(JwtProperties jwtProperties) {
-        super(new AntPathRequestMatcher("/trail/signIn"));
+        super(new AntPathRequestMatcher("/signIn"));
         this.jwtProperties = jwtProperties;
     }
 
@@ -53,8 +53,8 @@ public class JwtAuthenticationFilter extends AbstractAuthenticationProcessingFil
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response
             , FilterChain chain, Authentication authResult) throws IOException, ServletException {
         Account principal = (Account) authResult.getPrincipal();
-        String accessToken = jwtProperties.createAccessToken(String.valueOf(principal.getId()));
-        String refreshToken = jwtProperties.createRefreshToken(String.valueOf(principal.getId()));
+        String accessToken = jwtProperties.createAccessToken(principal.getSnsId());
+        String refreshToken = jwtProperties.createRefreshToken(principal.getSnsId());
 
         //맵에 넣기.
         Map<String, String> tokens = new HashMap<>();
