@@ -1,13 +1,19 @@
-@font-face {
-    font-family: 'ACCchildrenheartOTF-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112-2@1.0/ACCchildrenheartOTF-Regular.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-}
+/* @font-face {
+	font-family: 'ACCchildrenheartOTF-Regular';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112-2@1.0/ACCchildrenheartOTF-Regular.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+} */
+
+/* font-family: 'Cairo', sans-serif;
+font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Nanum Gothic Coding', monospace; */
 
 body {
-    background-color :#f7f2ec;
-    background: linear-gradient( to bottom, #f7f2ec, rgb(207, 229, 199) );
+    background-color: white;
+    font-family: 'Cairo', sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Nanum Gothic Coding', monospace;
 }
 
 /* 모바일용 CSS */
@@ -15,11 +21,12 @@ body {
     width: 90%;
     max-width: 1132px;
     margin: 0 auto;
-    font-family: 'ACCchildrenheartOTF-Regular';
+    font-family: 'Nanum Gothic Coding', monospace;
+    ;
 }
 
 fas {
-    padding : 50px;
+    padding: 50px;
 }
 
 .cfixed:after,
@@ -41,18 +48,22 @@ fas {
 .sec-tit {
     font-size: 50px;
     color: #5F7161;
-    font-family: 'ACCchildrenheartOTF-Regular';
+    font-family: 'Nanum Gothic Coding', monospace;
 }
+
+
 
 article .title {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'ACCchildrenheartOTF-Regular';
-    font-size: 100px;
-    padding-top : 25px;
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-size: 90px;
+    padding-top: 25px;
     height: 200px;
-    color :#1d3a1d
+    color: #5F7161;
+    line-height: 150%;
 }
 
 a {
@@ -83,19 +94,38 @@ a:visited {
 }
 
 /* 헤더 영역 CSS */
+header {
+    background-color: #f7f2ec;
+}
+
+header h1 a {
+    display: flex;
+    align-items: center;
+
+}
+
 .header {
-    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    background: #d2e2a4;
+    position: fixed;
     padding: 18px 5%;
-    font-family: 'ACCchildrenheartOTF-Regular';
+    font-family: 'Nanum Gothic Coding', monospace;
+
+    text-align: center;
 }
 
 .header .logo {
     float: left;
+    display: block;
 }
 
 .header .logo a {
-    font-size: 25px;
-    font-weight: normal;
+    font-size: 18px;
+    top: 10px;
+    font-weight: 500;
 }
 
 .header .gnb {
@@ -113,30 +143,35 @@ a:visited {
 .header .gnb li a {
     display: block;
     padding: 14px 0 14px 5%;
-    font-size: 14px;
+    font-size: 30px;
     color: #fff;
-    font-family: 'ACCchildrenheartOTF-Regular';
+    font-family: 'Nanum Gothic Coding', monospace;
 }
 
 .header .menu-toggle-btn {
+    position: fixed;
+    left: 450px;
     float: right;
     width: 20px;
     margin-top: 4px;
     cursor: pointer;
-    color:black
+    color: black
 }
 
 .header .menu-toggle-btn span {
     display: block;
     width: 100%;
     height: 2px;
-    background-color:black;
+    background-color: black;
 }
 
 .header .menu-toggle-btn span:nth-child(2) {
     margin: 5px 0;
 }
 
+.main .title {
+    padding-top: 100px;
+}
 
 /* what is 영역 CSS */
 .what_is-section {
@@ -149,7 +184,7 @@ a:visited {
 }
 
 .what_is-section .desc {
-    font-family: 'ACCchildrenheartOTF-Regular';
+    font-family: 'Nanum Gothic Coding', monospace;
     line-height: 1.5;
 }
 
@@ -175,15 +210,16 @@ a:visited {
 }
 
 .for_who-section .for_who-list li h3 {
-    font-size : 45px;
+    font-size: 30px;
     margin: 29px 0px 20px 0;
 }
 
 .for_who-section .for_who-list li p {
-    font-size: 20px;
-    font-family: 'ACCchildrenheartOTF-Regular';
+    font-size: 15px;
+    font-family: 'Nanum Gothic Coding', monospace;
     line-height: 1.5;
 }
+
 .for_who-section .for_who-list .info {
     text-align: center;
 }
@@ -197,13 +233,13 @@ a:visited {
 
 .functions-section .functions-list {
     margin-top: 52px;
-    text-align : center;
+    text-align: center;
 }
 
 .functions-section .functions-list li {
     margin-bottom: 50px;
-    background: linear-gradient( to bottom, rgb(222, 235, 215), rgb(187, 190, 186) );
-    border-radius: 10% / 50%;
+    background: #d2e2a4;
+    border-radius: 30px;
 
 }
 
@@ -211,8 +247,13 @@ a:visited {
     line-height: 40px;
 }
 
-.functions-section .functions-list .info {
+.functions-section .functions-list li .info h3 {
     font-size: 25px;
+    font-weight: bold;
+}
+
+.functions-section .functions-list .info {
+    font-size: 18px;
 }
 
 
@@ -241,6 +282,7 @@ a:visited {
 /* 푸터 영역 CSS */
 .footer {
     margin-top: 104px;
+
 }
 
 .footer iframe {
@@ -248,13 +290,94 @@ a:visited {
     height: 320px;
 }
 
-.footer p {
+.footer .copyright {
     margin: 21px 0;
     text-align: center;
-    font-family: 'ACCchildrenheartOTF-Regular';
-    font-size: 40px;
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-size: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* 초기화 */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+li {
+    list-style-type: none;
+}
+
+/* 보여줄 구간의 높이와 넓이 설정 */
+#slideShow {
+    /*전체 컨테이너*/
+    width: 500px;
+    height: 700px;
+    position: relative;
+    margin: 50px auto;
+    overflow: hidden;
+    /*리스트 형식으로 이미지를 일렬로 정렬할 것이기 때문에, 500px 밖으로 튀어 나간 이미지들은 hidden으로 숨겨줘야됨*/
+}
+
+.slides {
+    /*이미지들이 담겨있는 슬라이드 컨테이너*/
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2500px;
+    /* 슬라이드할 사진과 마진 총 넓이 */
+    transition: 0.5s ease-out;
+    /*ease-out: 처음에는 느렸다가 점점 빨라짐*/
+}
+
+/* 첫 번째 슬라이드 가운데에 정렬하기위해 첫번째 슬라이드만 margin-left조정 */
+.slides li:first-child {
+    margin-left: 100px;
+}
+
+/* 슬라이드들 옆으로 정렬 */
+.slides li:not(:last-child) {
+    float: left;
+    margin-right: 100px;
+}
+
+.controller span {
+    position: absolute;
+    background-color: transparent;
+    color: black;
+    text-align: center;
+    border-radius: 50%;
+    padding: 10px 20px;
+    top: 40%;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+
+/* 이전, 다음 화살표에 마우스 커서가 올라가 있을때 */
+.controller span:hover {
+    background-color: rgba(128, 128, 128, 0.11);
+}
+
+.prev {
+    left: 10px;
+}
+
+/* 이전 화살표에 마우스 커서가 올라가 있을때 이전 화살표가 살짝 왼쪽으로 이동하는 효과*/
+.prev:hover {
+    transform: translateX(-10px);
+}
+
+.next {
+    right: 10px;
+}
+
+/* 다음 화살표에 마우스 커서가 올라가 있을때 이전 화살표가 살짝 오른쪽으로 이동하는 효과*/
+.next:hover {
+    transform: translateX(10px);
+}
 
 /* 태블릿용 CSS */
 @media all and (min-width:768px) {
@@ -271,7 +394,12 @@ a:visited {
 
     /* 헤더 영역 CSS */
     .header {
-        position: static;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        left: 0;
+        background-color: #cbdfa6;
+        position: fixed;
         padding: 28px 52px;
     }
 
@@ -293,7 +421,7 @@ a:visited {
     .header .gnb li a {
         padding: 0;
         font-size: 16px;
-        color : black;
+        color: black;
     }
 
     .header .menu-toggle-btn {
@@ -306,8 +434,9 @@ a:visited {
 @media all and (min-width:1132px) {
 
     .main {
-        margin-top: 0px;
+        margin-top: 50px;
     }
+
     /* 디스플레이 영역 CSS */
     .what_is-section {
         text-align: left;
@@ -315,6 +444,7 @@ a:visited {
 
     .what_is-section .sec-tit {
         /* float: left; */
+        padding-top: 50px;
         margin-bottom: 40px;
     }
 
@@ -323,7 +453,7 @@ a:visited {
         float: right;
         padding-top: 35px;
         font-size: 24px;
-        font-family: 'ACCchildrenheartOTF-Regular';
+        font-family: 'Nanum Gothic Coding', monospace;
         color: #000000;
         line-height: 1.9;
     }
@@ -332,6 +462,7 @@ a:visited {
     .for_who-section .sec-tit {
         /* float: left; */
         margin-bottom: 0;
+        padding-top: 50px;
         text-align: start;
     }
 
@@ -349,22 +480,23 @@ a:visited {
     /* functions 영역 CSS */
     .functions-section .sec-tit {
         text-align: left;
+        padding-top: 40px;
     }
 
     .functions-section .functions-list li {
         text-align: center;
-        width : 310px;
+        width: 310px;
         height: 140px;
         float: left;
         margin-right: 9px;
     }
 
     .functions-section .functions-list li:nth-child(2) {
-        width : 230px;
+        width: 258px;
     }
 
     .functions-section .functions-list li:nth-child(4) {
-        width : 230px;
+        width: 215px;
     }
 
     .functions-section .functions-list .info {
@@ -374,8 +506,12 @@ a:visited {
 
     /* how to use 영역 CSS */
     .use-section .sec-tit {
+        padding-top: 40px;
         float: left;
         margin-bottom: 0;
     }
+
+    
+
 
 }
