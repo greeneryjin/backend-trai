@@ -13,6 +13,11 @@ import trailProject.trail.history.dto.save.HistoryDto;
 import trailProject.trail.history.entity.History;
 import trailProject.trail.history.repository.HistoryRepository;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
+
 @Service
 public class HistoryService {
 
@@ -22,7 +27,7 @@ public class HistoryService {
     @Autowired
     AccountRepository accountRepository;
 
-    @Transactional
+    @Transactional(readOnly = false)
     public void saveHistory(HistoryDto historyDto) {
 
         //사용자 가지고 오기
@@ -35,6 +40,28 @@ public class HistoryService {
         history.saveAccount(account);
         history.saveHistory(historyDto);
         historyRepository.save(history);
+
+        LocalDateTime workFinishTime = historyDto.getWorkFinishTime();
+        LocalDate localDate = LocalDate.now();
+        LocalDate workFinish = LocalDate.from(workFinishTime);
+        Period between = Period.between(workFinish, localDate);
+        int days = between.getDays();
+
+        int distance;
+        int step;
+        int time;
+
+        if(account.getDistanceTotal() == null && account.getStepCountTotal() == null && account.getTimeTotal() == null) {
+            distance = historyDto.getDistance();
+            step = historyDto.getStepCount();
+            time = historyDto.getWorkTime();
+        }
+        else {
+            distance = account.getDistanceTotal() + historyDto.getDistance();
+            step = account.getStepCountTotal() + historyDto.getStepCount();
+            time = account.getTimeTotal() + historyDto.getWorkTime();
+        }
+        account.saveWork(distance, step, time, days);
     }
 
     @Transactional(readOnly = true)

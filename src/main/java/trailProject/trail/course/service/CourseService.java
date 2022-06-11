@@ -7,6 +7,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import trailProject.trail.account.entity.Account;
 import trailProject.trail.account.repository.AccountRepository;
+import trailProject.trail.course.dto.CoordinateDto;
 import trailProject.trail.course.dto.DetailDto;
 import trailProject.trail.course.dto.CourseDto;
 import trailProject.trail.course.entity.Course;
@@ -28,19 +29,12 @@ public class CourseService {
 
     @Autowired
     private final FacilityRepository facilityRepository;
-    @Autowired
-    private final AccountRepository accountRepository;
 
     @Autowired
     private final DetailRepository detailRepository;
 
     public List<CourseDto> findByFilter(String gu, String level, String toilet, String charge, String thirtyMore) {
 
-//        //사용자 가지고 와서 location으로 gu 받아오기
-//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//        Account accountId = (Account) authentication.getPrincipal();
-//        Account account = accountRepository.findBySnsId(accountId.getSnsId());
-//        String gu = account.getLocation();
         List<CourseDto> courseDtoList;
 
         if(level.isEmpty()){
@@ -176,21 +170,24 @@ public class CourseService {
         Course course = courseRepository.findByCourseId(courseId);
         Detail detail = detailRepository.findByCourse(course);
         String[] coordinateArray = detail.getCoordinateArray().replaceAll("[^0-9.]", " ").trim().split("\\s+");
-        Map<String, String> detailmap = new HashMap<>();
+        Map<String, String> detailmap = new LinkedHashMap<>();
+        ArrayList<CoordinateDto> detailArr = new ArrayList<>();
         for (int i = 0; i < coordinateArray.length-1; i+=2) {
             for (int j = i; j == i ; j++) {
-                detailmap.put(coordinateArray[i], coordinateArray[i+1]);
+                CoordinateDto coordinateDto = new CoordinateDto(coordinateArray[i+1], coordinateArray[i]);
+                detailArr.add(coordinateDto);
+//                detailmap.put(coordinateArray[i+1], coordinateArray[i]);
             }
         }
-        DetailDto detailDto = new DetailDto(detail.getDetailId(), detailmap);
-
+        DetailDto detailDto = new DetailDto(detail.getDetailId(), detailArr); //detailmap);
 
         List<FacilityDto> facilityDtoList = new ArrayList<>();
         List<Facility> facilityList = facilityRepository.findByDetail(detail);
-        Map<String, String> facilityMap = new HashMap<>();
+//        Map<String, String> facilityMap = new HashMap<>();
         for (Facility facility : facilityList) {
-            facilityMap.put(facility.getX(), facility.getY());
-            FacilityDto facilityDto = new FacilityDto(facility.getFacilityId(), facility.getFacilityName(), facility.getType(),facilityMap);
+            CoordinateDto Coordinate = new CoordinateDto(facility.getY(), facility.getX());
+//            facilityMap.put(facility.getX(), facility.getY());
+            FacilityDto facilityDto = new FacilityDto(facility.getFacilityId(), facility.getFacilityName(), facility.getType(),Coordinate);
             facilityDtoList.add(facilityDto);
         }
         detailDto.setFacilityDtoList(facilityDtoList);

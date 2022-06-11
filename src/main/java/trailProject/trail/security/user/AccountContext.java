@@ -7,19 +7,17 @@ import trailProject.trail.account.entity.Account;
 
 import java.util.Collection;
 
-//인증을 위한 객체 생성.
-
 @Getter
 public class AccountContext extends User {
 
     private Account account;
 
     public AccountContext(Account account, Collection<? extends GrantedAuthority> authorities) {
-        super(String.valueOf(account.getId()), account.getName(), authorities);
+        super(account.getSnsId(), account.getName(), authorities);
         this.account = account;
     }
 
-    public Long getId(){
-        return account.getId();
+    public Account getAccount() {
+        return account;
     }
 }

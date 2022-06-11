@@ -1,10 +1,8 @@
 package trailProject.trail.course.entity;
 import lombok.*;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-
 
 @Data
 @Entity
@@ -36,5 +34,4 @@ public class Course {
         this.courseDistance = courseDistance;
         this.level = level;
     }
-
 }

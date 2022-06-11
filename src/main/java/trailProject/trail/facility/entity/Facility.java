@@ -34,4 +34,3 @@ public class Facility {
         this.y = y;
     }
 }
-

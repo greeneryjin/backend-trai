@@ -22,8 +22,7 @@ public class JwtProperties {
         Algorithm algorithm = Algorithm.HMAC256(secret.getBytes());
         String accessToken = JWT.create()
                 .withSubject(account)
-                //한 달
-                .withExpiresAt(new Date(System.currentTimeMillis() + 5000 * 60 * 60 * 1000))
+                .withExpiresAt(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 9999))
                 .sign(algorithm);
         return accessToken;
     }
@@ -33,13 +32,11 @@ public class JwtProperties {
         Algorithm algorithm = Algorithm.HMAC256(secret.getBytes());
         String refreshToken = JWT.create()
                 .withSubject(account)
-                //두 달
                 .withExpiresAt(new Date(System.currentTimeMillis() + + 100000 * 60 * 60 * 1000))
                 .sign(algorithm);
         return refreshToken;
     }
 
-    //토큰 유효성 검사
     public JWTVerifier verifierToken(){
         Algorithm algorithm = Algorithm.HMAC256(secret.getBytes());
         JWTVerifier verifier = JWT.require(algorithm).build();
