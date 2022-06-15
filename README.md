@@ -16,21 +16,21 @@
 
 ## App Icon
 
-<img src="./src/main/resources/templates/trail_app_icon.png"  width="100px" height="100px"/>
+<img src=" ./src/main/resources/templates/trail/trail_app_icon.png"  width="100px" height="100px"/>
 
 
 ##  사용기술 및 도구  
 
 🗒️  **Language**: **JAVA**
 
--spring
--jpa
--mysql
--nginx
--docker
--jwt
--Thymeleaf
--css
--HTML
+- spring
+- jpa
+- mysql
+- nginx
+- docker
+- jwt
+- Thymeleaf
+- css
+- HTML
 
 
