@@ -16,7 +16,7 @@
 
 ## App Icon
 
-<img src=" /src/main/resources/templates/trail/trail_app_icon.png"  width="100px" height="100px"/>
+<img src=" ./src/main/resources/static/images/trail_app_icon.png"  width="100px" height="100px"/>
 
 
 ##  사용기술 및 도구  
