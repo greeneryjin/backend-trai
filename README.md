@@ -18,7 +18,7 @@
 ##  사용기술 및 도구  
 
 🗒️  **Language**: **JAVA**
-
+```
 - spring
 - jpa
 - mysql
@@ -28,6 +28,6 @@
 - Thymeleaf
 - css
 - HTML
-
+```
 ## 로그인 시퀀스 다이어그램
 ![Untitled](https://user-images.githubusercontent.com/87289562/216900238-a2d36691-515b-4e78-bdf9-ee72db70f87d.png)
