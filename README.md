@@ -33,5 +33,16 @@
 ![Untitled](https://user-images.githubusercontent.com/87289562/216900238-a2d36691-515b-4e78-bdf9-ee72db70f87d.png)
 
 ## 완성된 앱 구동 화면 
-![늘솔길 app](https://github.com/greeneryjin/backend-trai/assets/87289562/92144b8e-74a6-4e02-9780-5e2ffd9bf76e)
+<div align="center">
+  <img src="https://github.com/greeneryjin/backend-trai/assets/87289562/006df773-b4b0-4207-a0c4-b3d19bdc3f51" width="200px" height="450px"/>
+  <img src="https://github.com/greeneryjin/backend-trai/assets/87289562/06635606-2e4f-44da-a5a8-f1034aa83932" width="200px" height="450px"/>
+  <img src="https://github.com/greeneryjin/backend-trai/assets/87289562/4867a09d-b075-4462-bcad-760c3231c528" width="200px" height="450px"/>
+  <img src="https://github.com/greeneryjin/backend-trai/assets/87289562/8b71f626-9ac5-4b16-809e-b846161c060e" width="200px" height="450px"/>
+</div>
 
+
+<div align="center">
+  <img src="https://github.com/greeneryjin/backend-trai/assets/87289562/8c3e242b-8327-4610-85b5-4f3f1620e14b" width="200px" height="450px"/>
+  <img src="https://github.com/greeneryjin/backend-trai/assets/87289562/f099f868-c584-4624-86c2-aa4eca2797a4" width="200px" height="450px"/>
+  <img src="https://github.com/greeneryjin/backend-trai/assets/87289562/b98e6993-ffbe-4eb1-a179-5dc1dbb6cbf8" width="200px" height="450px"/>
+</div>
