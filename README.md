@@ -31,3 +31,6 @@
 ```
 ## 로그인 시퀀스 다이어그램
 ![Untitled](https://user-images.githubusercontent.com/87289562/216900238-a2d36691-515b-4e78-bdf9-ee72db70f87d.png)
+
+## 완성된 앱 구동 화면 
+
