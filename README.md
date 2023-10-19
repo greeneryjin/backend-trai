@@ -33,4 +33,5 @@
 ![Untitled](https://user-images.githubusercontent.com/87289562/216900238-a2d36691-515b-4e78-bdf9-ee72db70f87d.png)
 
 ## 완성된 앱 구동 화면 
+![늘솔길 app](https://github.com/greeneryjin/backend-trai/assets/87289562/92144b8e-74a6-4e02-9780-5e2ffd9bf76e)
 
