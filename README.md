@@ -19,7 +19,10 @@
 
 🗒️  **Language**: **JAVA**
 ```
-- spring
+- spring boot
+- spring security
+- spring data jpa
+- jwt
 - jpa
 - mysql
 - nginx
